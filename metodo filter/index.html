@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulando array</title>
+</head>
+<body>
+  
+  <!--  Onde o array completo será exibido -->
+  <p id="numeros"></p>   
+
+   <!-- Onde a quantidade de numeros positivos será exibida  -->
+  <p id="positivos"></p>
+
+  <!-- Onde a quantidade de numeros negativos será exibida  -->
+  <p id="negativos"></p>
+  
+  
+
+  <script>
+
+// Declarando o array completo
+  const numeros = [45, 4, 9, 16, 25,-1,-2,-54,12,-45,89,-17,-90,33,-64]; 
+
+  // declarando os arrays que receberão os numeros positivos e impares através do metodo FILTER 
+  const positivos = numeros.filter(filtrarpositivos);
+  const negativos = numeros.filter(filtrarnegativos);
+  
+  // criando função que filtrará os numeros positivos
+  function filtrarpositivos(value, index, array) {
+    return value > 0;
+  }
+  
+  // criando função que filtrará os numeros negativos
+  function filtrarnegativos(value, index, array) {
+    return value < 0;
+  }
+  
+  // printando os valores das constantes nos elemntos html que foram reservados
+  document.getElementById("numeros").innerHTML = "Numeros do array: " + numeros;
+  document.getElementById("positivos").innerHTML = "Quantidade de Numeros positivos: " + positivos.length ;
+  document.getElementById("negativos").innerHTML = "Quantidade de Numeros negativos: " + negativos.length ;
+  
+  </script>
+
+</body>
+</html>
